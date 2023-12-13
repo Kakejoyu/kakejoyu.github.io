@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+div.discord-main {
+    width: 300px;
+    border: var(--discord-border);
+    border-radius: 14px;
+}
+
+div.discord-banner {
+    height: 50px;
+    background: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+div.discord-info {
+    overflow: hidden;
+    padding: 10px;
+    background: var(--box-color);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+div.discord-info img {
+    width: 60px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+div.discord-info span {
+    color: var(--color);
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.discord-info a {
+    color: var(--color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+div.discord-info i {
+    color: var(--color);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+div.accounts-list > div {
+    margin: 20px 0;
+}
+
+div.accounts-list > div > div:nth-child(1) {
+    width: 100px;
+    float: left;
+}
+
+div.accounts-list i {
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+div.accounts-list a {
+    background: var(--box-color);
+    color: var(--color);
+    padding: 5px 10px;
+    border-radius: 9999px;
+    text-decoration: none;
+}
+
+div.accounts-list a:hover {
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 300px) {
+    div.accounts-list > div > div:nth-child(1) {
+        float: none;
+    }
+    div.accounts-list > div > div:nth-child(2) {
+        margin: 10px 0;
+    }
+}
