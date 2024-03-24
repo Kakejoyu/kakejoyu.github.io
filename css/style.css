@@ -1,87 +1,348 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+body {
+  --color: #000;
+  --bg: rgba(255, 255, 255, 0.5);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  animation: bg-gradient 5s linear infinite alternate;
+  background: linear-gradient(45deg, #fa8bff, #2bd2ff, #2bff88) 0 / 200% 100%;
+}
 
-div.discord-main {
+body.dark-theme {
+  --color: #fff;
+  --bg: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #a000a8, #0084a8, #00a849) 0 / 200% 100%;
+}
+
+@keyframes bg-gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+a {
+  color: var(--color);
+  transition: color 0.3s linear;
+}
+
+a:hover {
+  color: #1100ff;
+}
+
+header {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.theme-change {
+  width: 30px;
+  margin-right: 5px;
+  padding: 5px;
+  background: var(--bg);
+  border-radius: 10px;
+}
+
+#theme-toggle {
+  border: none;
+  background: none;
+  font-size: 25px;
+  color: var(--color);
+  transition: transform 0.1s linear;
+  transform-origin: -5px;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.lang-change {
+  padding: 5px;
+  background: var(--bg);
+  border-radius: 10px;
+}
+
+.lang-change i {
+  font-size: 25px;
+  vertical-align: -5px;
+  padding-right: 5px;
+  color: var(--color);
+}
+
+.profile-card {
+  width: 320px;
+  height: 250px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: var(--bg);
+  border-radius: 10px;
+  color: var(--color);
+  backface-visibility: hidden;
+  transition: transform 1s ease;
+}
+
+.profile-card.turned {
+  transform: rotateX(180deg) translate(-50%, 0px);
+  -webkit-transform: rotateX(180deg) translate(-50%, 0px);
+  -ms-transform: rotateX(180deg) translate(-50%, 0px);
+  transform-origin: 0 23%;
+  -webkit-transform-origin: 0 23%;
+  -ms-transform-origin: 0 23%;
+}
+
+#turn-card {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 10px;
+  border-radius: 9999px;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  z-index: 2;
+}
+
+#turn-card:hover {
+  transform: scale(1.2);
+}
+
+#turn-card i {
+  font-size: 20px;
+}
+
+.icon {
+  width: 40px;
+  border-radius: 9999px;
+  vertical-align: -10px;
+}
+
+.title {
+  margin-left: 5px;
+  font-size: 24px;
+}
+
+.subtitle {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-list a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  transition: transform 0.1s linear;
+}
+
+.flex-list a:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.flex-list img,
+.flex-list i {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.fa-github,
+.fa-steam,
+.fa-x-twitter,
+.fa-envelope,
+.fa-key {
+  color: #000;
+}
+
+.fa-spotify {
+  color: #1ed760;
+}
+
+.fa-twitch {
+  color: #9147ff;
+}
+
+.fa-xbox {
+  color: #107c10;
+}
+
+.fa-youtube {
+  color: #f00;
+}
+
+.fa-pixiv {
+  color: #0097fa;
+}
+
+.stack-card {
+  width: 320px;
+  height: 250px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(180deg) translate(-50%, 0px);
+  -webkit-transform: rotateX(180deg) translate(-50%, 0px);
+  -ms-transform: rotateX(180deg) translate(-50%, 0px);
+  transform-origin: 0 23%;
+  -webkit-transform-origin: 0 23%;
+  -ms-transform-origin: 0 23%;
+  background: var(--bg);
+  border-radius: 10px;
+  color: var(--color);
+  backface-visibility: hidden;
+  transition: transform 1s ease;
+}
+
+.stack-card.turned {
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#open-project {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  font-size: 30px;
+  color: var(--color);
+  z-index: 20;
+  transition: transform 0.1s linear;
+}
+
+#open-project:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.project-card {
+  position: fixed;
+  color: var(--color);
+  background: var(--bg);
+  width: 400px;
+  height: 80%;
+  top: 47%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 10;
+  transition: left 0.2s linear;
+  overflow-y: scroll;
+}
+
+body.card-opened .project-card {
+  left: 50%;
+}
+
+body.card-opened .profile-card,
+body.card-opened #turn-card,
+body.card-opened .stack-card {
+  display: none;
+}
+
+.projects-list div {
+  overflow: hidden;
+}
+
+a.projects {
+  color: var(--color);
+  text-decoration: none;
+  float: left;
+  margin: 5px;
+}
+
+div.projects {
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 10px;
+  width: 350px;
+  position: relative;
+}
+
+div.projects > div:nth-child(1) > img {
+  width: 1.5em;
+  border-radius: 9999px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+div.projects > div:nth-child(3) > div {
+  width: 1em;
+  height: 1em;
+  border-radius: 9999px;
+  float: left;
+  margin-right: 5px;
+}
+
+div.projects > div:nth-child(3) > span {
+  margin-right: 10px;
+}
+
+div.projects > div:nth-child(3) > i {
+  margin-right: 5px;
+}
+
+div.projects > i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 1.5em;
+}
+
+footer {
+  width: 420px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  color: var(--color);
+}
+
+@media screen and (max-width: 450px) {
+  div.project-card {
     width: 300px;
-    border: var(--discord-border);
-    border-radius: 14px;
+  }
+  div.projects {
+    width: 250px;
+  }
 }
 
-div.discord-banner {
-    height: 50px;
-    background: #fae73a;
-    border-radius: 10px 10px 0 0;
-}
+@media screen and (max-width: 400px) {
+  #turn-card {
+    right: 20px;
+  }
 
-div.discord-info {
-    overflow: hidden;
-    padding: 10px;
-    background: var(--box-color);
-    border-radius: 0 0 10px 10px;
-    position: relative;
-}
-
-div.discord-info img {
-    width: 60px;
-    border-radius: 50%;
-    float: left;
-    margin-right: 10px;
-}
-
-div.discord-info span.discord-name {
-    color: var(--color);
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-div.discord-info pre.discord-id {
-    margin: 0;
-    font-size: 15px;
-}
-
-div.discord-info a {
-    text-decoration: none;
-}
-
-div.discord-info i {
-    color: var(--color);
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-
-div.accounts-list > div {
-    margin: 20px 0;
-}
-
-div.accounts-list > div > div:nth-child(1) {
-    width: 100px;
-    float: left;
-}
-
-div.accounts-list i {
-    font-size: 1.5em;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-div.accounts-list a {
-    background: var(--box-color);
-    color: var(--color);
-    padding: 5px 10px;
-    border-radius: 9999px;
-    text-decoration: none;
-}
-
-div.accounts-list a:hover {
-    color: var(--accent-color);
-}
-
-@media screen and (max-width: 300px) {
-    div.accounts-list > div > div:nth-child(1) {
-        float: none;
-    }
-    div.accounts-list > div > div:nth-child(2) {
-        margin: 10px 0;
-    }
+  footer {
+    width: 95%;
+  }
 }
