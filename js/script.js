@@ -58,7 +58,7 @@ $(function () {
     }
   });
 
-  $('#turn-card').on('click', function () {
+  $('.turn-card').on('click', function () {
     $('.profile-card').toggleClass('turned');
     $('.stack-card').toggleClass('turned');
   });

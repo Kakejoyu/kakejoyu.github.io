@@ -105,22 +105,22 @@ header {
   -ms-transform-origin: 0 23%;
 }
 
-#turn-card {
-  border: 1px solid #000;
+.turn-card {
   background: #fff;
   padding: 10px;
   border-radius: 9999px;
   position: absolute;
-  top: 25%;
-  right: 15%;
+  top: -5%;
+  right: -5%;
   z-index: 2;
 }
 
-#turn-card:hover {
+.turn-card:hover {
   transform: scale(1.2);
 }
 
-#turn-card i {
+.turn-card i {
+  color: #000;
   font-size: 20px;
 }
 
